@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_14_070030) do
+ActiveRecord::Schema.define(version: 2021_08_18_092028) do
+
+  create_table "main_issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "title", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_main_issues_on_user_id"
+  end
+
+  create_table "sub_issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "title", null: false
+    t.text "hypothesis"
+    t.text "new_hypothesis"
+    t.text "sub_conclusion"
+    t.bigint "main_issue_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["main_issue_id"], name: "index_sub_issues_on_main_issue_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,4 +44,6 @@ ActiveRecord::Schema.define(version: 2021_08_14_070030) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "main_issues", "users"
+  add_foreign_key "sub_issues", "main_issues"
 end

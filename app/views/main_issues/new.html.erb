@@ -1,0 +1,16 @@
+<div class='main-issue-form'>
+  <h1>新規イシュー</h1>
+  <%=form_with model: @main_issue, local: true do |f|%>
+     <%= f.label :イシューを特定する, class: 'main-issue-form__label'%>
+    <div class='main-issue-form__field--right'>
+      <%= f.text_area :title, class: 'main-issue_name main-issue-form__input', placeholder: 'イシューを入力してください'%>
+    </div>
+    <div class='main-issue-form__field'>
+     <%= f.submit class: 'main-issue--form__action-btn'%>
+    </div>
+    イシューとは、「考えやすい」ことではなく、「考えるべき」こと。
+    イシューは「決まる」ものではなく、「決める」もの
+    なぜそれを考えるのか、本当にそれを考える必要があるのか、他に考えるべきことはないのか、
+    意義を確認する、取捨選択する
+  <% end %>
+</div>

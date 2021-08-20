@@ -33,9 +33,9 @@
       <span class='issue-btn-text'>クリティカルシンキングをはじめる</span>
     <% end %>
     <section id="area-1">
-    <% if user_signed_in? %>
+      <h2>こんな方にお勧めです。</h2>
       <div class="main-issue">
-        <% current_user.main_issues.each do |main_issue| %>
+        <% current_user.main_issue.each do |main_issue| %>
           <div class="main-issue">
             <div class="main-issue-name">
               <%= link_to main_issue.title, main_issue_sub_issues_path(main_issue) %>
@@ -43,8 +43,6 @@
           </div>
         <% end %>
       </div>
-    <% else %>
-      <h2>こんな方にお勧めです。</h2>
       <p>社内会議で通したい企画案。何をどう整理すればいい？</p>
       <p>何を言いたいのかわからないと最近よく言われてしまう…</p>
       <p>このプランで行くと決めたのに、自信が持てないのはなぜ？</p>
@@ -68,7 +66,6 @@
       <p>テキストが入ります。</p>
 
     <!--/area3--></section>
-    <% end %>
   <!--/main--></main>
 
   <footer id="footer">
