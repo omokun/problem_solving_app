@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--==============レイアウトを制御する独自のCSSを読み込み===============-->
+<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-1-26/css/5-1-26.css">
+</head>
+<body>
+  <header id="header">
+    <h1>"イシュー#{@main_issue.title}"</h1>
+    <nav id="g-nav">
+    <ul>
+      <li><a href="#area-1">１．枠組み</a></li>
+      <li><a href="#area-2">２．初期仮説</a></li>
+      <li><a href="#area-3">３．検証情報</a></li>
+      <li><a href="#area-4">４．仮説を進化</a></li>
+      <li><a href="#area-5">５．サブイシュー結論</a></li>
+      <li><a href="#area-6">６．イシュー結論</a></li>
+      <li><a href="#area-7">７．メインメッセージ</a></li>
+    </ul>
+  </nav>
+  </header>
+    
+  <main>
+    <section class="scroll-point" id="area-1">
+      <h2>１．枠組みを考える（サブイシュー）</h2>
+
+
+    <%= form_with model: @sub_issue, id: 'charge-form', class: 'card-form',local: true do |f| %>
+      <div class='form-wrap'>
+        <%= f.label :title, "サブイシュー①" %>
+        <%= f.text_field :title, class:"price", placeholder:"例)     〜か？" %>
+      </div>
+      <%= f.submit "登録", class:"button", id: "button" %>
+    <% end %>
+
+    <!--/area1--></section>
+      <section class="scroll-point" id="area-2">
+      <h2>２．初期仮説を立てる</h2>
+      <p>仮説①（〜だろう）</p>
+      <p>仮説②（〜だろう）</p>
+      <p>仮説③（〜だろう）</p>
+
+    <!--/area2--></section>
+      <section class="scroll-point" id="area-3">
+      <h2>３．検証情報を集める</h2>
+      <p></p>
+      <p>あ</p>
+      <p>あ</p>
+      <p>あ</p>
+      <p>あ</p>
+
+    <!--/area3--></section>
+      <section class="scroll-point" id="area-4">
+      <h2>４．仮説を進化させる</h2>
+      <p>あ</p>
+      <p>あ</p>
+      <p>あ</p>
+      <p>あ</p>
+      <p>あ</p>
+      <p>あ</p>
+
+    <!--/area4--></section>
+      <section class="scroll-point" id="area-5">
+        <h2>５．サブイシューに対する主張・結論</h2>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+
+    <!--/area5--></section>
+      <section class="scroll-point" id="area-6">
+        <h2>６．イシューに対する主張・結論</h2>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+
+    <!--/area6--></section>
+      <section class="scroll-point" id="area-7">
+        <h2>７．メインメッセージ</h2>
+        <p>あああ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+        <p>あ</p>
+
+    <!--/area7--></section>
+  <!--/main--></main>
+
+  <footer id="footer">
+   <p id="page-top"><a href="#">Page Top</a></p> 
+    <small>&copy; copyright.</small>  
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-1-26/js/5-1-26.js"></script>
+</body>
+</html>

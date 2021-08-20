@@ -1,0 +1,38 @@
+.card-form{
+  width: 500px;
+}
+
+.form-wrap{
+  display: flex;
+  flex-direction: column;
+}
+
+.exp_month{
+  resize:none;
+}
+
+.exp_year{
+  resize:none;
+}
+
+.input-expiration-date-wrap{
+  display: flex;
+}
+
+
+.button{
+  height: 50px;
+  width: 100px;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+  border: solid 3px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+
+.footer{
+  position: relative;
+  z-index: 2;
+}

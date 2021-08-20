@@ -16,22 +16,22 @@
 |Column            |Type       |Options                              |
 |------------------|-----------|-------------------------------------|
 |title             |text       |null: false                          |
-|conclusion        |text       |null: false                          |
 |user              |references |null: false, foreign_key: true       |
 
 ### Association
 - belongs_to :user
 - has_many :sub_issues
+- has_one :conclusions
 
 ## sub_issues テーブル
 
 |Column         |Type          |Options                              |
 |---------------|--------------|-------------------------------------|
 |title          |text          |null: false                          |
-|hypothesis     |text          |null: false                          |
-|new_hypothesis |text          |null: false                          |
-|sub_conclusion |text          |null: false                          |
-|main_issues    |references    |null: false, foreign_key: true       |
+|hypothesis     |text          |                                     |
+|new_hypothesis |text          |                                     |
+|sub_conclusion |text          |                                     |
+|main_issue     |references    |null: false, foreign_key: true       |
 
 
 ### Association
@@ -43,7 +43,17 @@
 |Column           |Type         |Options                              |
 |-----------------|-------------|-------------------------------------|
 |content          |text         |null: false                          |
-|purchase_record  |references   |null: false, foreign_key: true       |
+|sub_issue        |references   |null: false, foreign_key: true       |
 
 ### Association
-belongs_to :sub_issues
+belongs_to :sub_issue
+
+## conclusions テーブル
+
+|Column            |Type       |Options                              |
+|------------------|-----------|-------------------------------------|
+|title             |text       |null: false                          |
+|main_issue        |references |null: false, foreign_key: true       |
+
+### Association
+- belongs_to :main_issue

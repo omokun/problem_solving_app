@@ -1,0 +1,2 @@
+module MainIssuesHelper
+end
