@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-  has_many :main_issues 
+  has_many :user_main_issues
+  has_many :main_issues, through: :user_main_issues
 
 end
