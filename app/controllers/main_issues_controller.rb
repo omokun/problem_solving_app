@@ -1,5 +1,5 @@
 class MainIssuesController < ApplicationController
-  before_action :authenticate_user!
+
 
   def new
     @main_issue = MainIssue.new
