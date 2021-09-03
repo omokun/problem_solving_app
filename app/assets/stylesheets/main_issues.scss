@@ -1,53 +1,3 @@
-.container {
-  font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
-  text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #000;
-}
-
-
-/* ここから下がボタンのCSS　*/
-.btn-shine {
-  color: #FFF;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 45px;
-  width: 200px;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  outline: 1px solid;
-  outline-color: rgba(255, 255, 255, 0.5);
-  outline-offset: 0px;
-  text-shadow: none;
-  transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
-}
-
-.btn-shine:hover {
-  border-color: #FFF;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
-  outline-color: transparent;
-  outline-offset: 12px;
-  text-shadow: 2px 2px 3px #000;
-}
-
-
-/* ここはコピーしなくてOK　*/
-.container-02 {
-  text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #e00364;
-}
-
-/* ここから下がボタンのCSS　*/
-.btn-shine.is-pink:hover {
-  text-shadow: 2px 2px 3px #e00364;/* text-shadowを背景色に変更する*/
-}
-
 /* 背景画像のCSS　*/
 .bg-image {
   background: url(critical_thinking_top.jpg) no-repeat center;
@@ -80,4 +30,378 @@
   font-weight: bold;
   width: 100%;
   text-align: center;
+}
+
+/* ヘッダー */
+
+.header {
+  background-color: #000000;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+}
+
+.nav__left {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__right {
+  width: calc(100% - 300px);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.2em;
+  color: #FF0000;
+  text-decoration: none;
+  user-select: none;
+  border: 2px #FF0000 solid;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+.nav__btn:hover{
+  color: #fff;
+  background: #FF0000;
+}
+
+.nav__btn2{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  margin-right: 50px;
+  font-size: 1.2em;
+  color: #FF0000;
+  text-decoration: none;
+  user-select: none;
+  border: 2px #FF0000 solid;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+.nav__btn2:hover{
+  color: #fff;
+  background: #FF0000;
+}
+
+.nav__logout{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  margin-right: 50px;
+  font-size: 1.2em;
+  color: #FF0000;
+  text-decoration: none;
+  user-select: none;
+}
+.nav__logout:hover{
+  opacity: 0.5;
+}
+
+/* 光るボタンのCSS　*/
+.shiny-btn {
+  display: block;
+  position: relative;
+  width: 20%;/*ボタンの幅*/
+  padding: 10px 0;
+  margin: 30px auto;
+  background-color: #ed4545;/*ボタンの色*/
+  box-shadow: 0 3px 0 0 rgba(198, 39, 39, 1);/*影の色(rgbaの値を変更)*/
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.shiny-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.7;
+  box-shadow: none;
+  -webkit-transform: translateY(3px);
+}
+.shiny-btn::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn4 3s ease-in-out infinite;
+}
+@-webkit-keyframes shiny-btn4 {
+  0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+  80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+  81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+  100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
+
+.list-of-issue{
+  // border-bottom: 3px double #00FFFF;
+  // background:rgba(0,255,255,0.5);
+  // width: 55%;
+  margin: 0 auto;
+}
+
+.main_issue-lists {
+  // background:rgba(0,255,255,0.1);
+  height: 500px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5em 0.5em 0.5em 2em;/*ボックス内の余白*/
+  border: solid 3px gray;/*線の種類 太さ 色*/
+  overflow: scroll;
+  
+}
+
+.main-issue-form__input {
+  border: 2px solid #FFFFFF;  /* 枠線 */
+  // border-radius: 0.67em;   /* 角丸 */
+  // padding: 0.5em;          /* 内側の余白量 */
+  // background-color: snow;  /* 背景色 */
+  width: 20em;             /* 横幅 */
+  height: 120px;           /* 高さ */
+  font-size: 1em;          /* 文字サイズ */
+  line-height: 1.2;        /* 行の高さ */
+  margin: 0 auto;
+  text-decoration:none; 
+}
+
+.main-issue-title {
+  color: #FFFFFF; 
+  padding: 0.5em 0; /*前後の文との余白*/
+  text-decoration: none; 
+}
+
+.main-issue-title:hover {
+  color: #fff;
+  opacity: 0.7;
+  }
+
+
+
+
+
+
+
+
+
+
+/*========= ナビゲーションドロップダウンのためのCSS ===============*/
+
+/*==ナビゲーション全体の設定*/
+nav{
+	background:#333;
+	color:#fff;
+	text-align: center;
+}
+/*ナビゲーションを横並びに*/
+nav ul{
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+/*2階層目以降は横並びにしない*/
+nav ul ul{
+	display: block;
+}
+
+/*下の階層のulや矢印の基点にするためliにrelativeを指定*/
+nav ul li{
+	position: relative;
+}
+
+/*ナビゲーションのリンク設定*/
+nav ul li a{
+	display: block;
+	text-decoration: none;
+	color: #999;
+	padding:20px 35px;
+	transition:all .3s;
+}
+
+nav ul li li a{
+	padding:10px 35px;
+}
+
+nav ul li a:hover{
+	color:#fff;	
+}
+
+/*==矢印の設定*/
+
+/*2階層目を持つliの矢印の設定*/
+nav ul li.has-child::before{
+	content:'';
+	position: absolute;
+	left:15px;
+	top:25px;
+	width:6px;
+	height:6px;
+	border-top: 2px solid #999;
+    border-right:2px solid #999;
+    transform: rotate(135deg);
+}
+
+/*3階層目を持つliの矢印の設定*/
+nav ul ul li.has-child::before{
+	content:'';
+	position: absolute;
+	left:6px;
+	top:17px;
+	width:6px;
+	height:6px;
+    border-top: 2px solid #fff;
+    border-right:2px solid #fff;
+    transform: rotate(45deg);
+}
+
+/*== 2・3階層目の共通設定 */
+
+/*下の階層を持っているulの指定*/
+nav li.has-child ul{
+    /*絶対配置で位置を指定*/
+	position: absolute;
+	left:0;
+	top:62px;
+	z-index: 4;
+    /*形状を指定*/
+	background:#28BFE7;
+	width:180px;
+    /*はじめは非表示*/
+	visibility: hidden;
+	opacity: 0;
+    /*アニメーション設定*/
+	transition: all .3s;
+}
+
+/*hoverしたら表示*/
+nav li.has-child:hover > ul,
+nav li.has-child ul li:hover > ul,
+nav li.has-child:active > ul,
+nav li.has-child ul li:active > ul{
+  visibility: visible;
+  opacity: 1;
+}
+
+/*ナビゲーションaタグの形状*/
+nav li.has-child ul li a{
+	color: #fff;
+	border-bottom:solid 1px rgba(255,255,255,0.6);
+}
+
+nav li.has-child ul li:last-child a{
+	border-bottom:none;
+}
+
+nav li.has-child ul li a:hover,
+nav li.has-child ul li a:active{
+	background:#3577CA;
+}
+
+
+/*==3階層目*/
+
+/*3階層目の位置*/
+nav li.has-child ul ul{
+	top:0;
+	left:182px;
+	background:#66ADF5;
+}
+
+nav li.has-child ul ul li a:hover,
+nav li.has-child ul ul li a:active{
+	background:#448ED3;
+}
+
+
+/*==768px以下の形状*/
+
+@media screen and (max-width:768px){
+	nav{
+		padding: 0;
+	}
+	
+	nav ul{
+		display: block;
+	}
+	
+	nav li.has-child ul,
+	nav li.has-child ul ul{
+  	position: relative;
+	left:0;
+	top:0;
+	width:100%;
+	visibility:visible;/*JSで制御するため一旦表示*/
+	opacity:1;/*JSで制御するため一旦表示*/
+	display: none;/*JSのslidetoggleで表示させるため非表示に*/
+	transition:none;/*JSで制御するためCSSのアニメーションを切る*/
+}
+	
+nav ul li a{
+	border-bottom:1px solid #ccc;
+}
+
+/*矢印の位置と向き*/
+
+nav ul li.has-child::before{
+	left:20px;	
+}
+
+nav ul ul li.has-child::before{
+    transform: rotate(135deg);
+	left:20px;
+}
+    
+nav ul li.has-child.active::before{
+    transform: rotate(-45deg);
+}
+
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+h1{
+	font-size:2rem;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 20px;
+}
+
+h2{
+	font-size:1.2rem;
+	text-align: center;
+	margin: 0 0 30px 0;
+}
+
+p{
+	margin-top:20px;	
+}
+
+small{
+	background:#221f1f;
+	color:#fff;
+	display: block;
+	text-align: center;
+	padding:20px;
+}
+
+
+section{
+	padding:30px;
+}
+
+section:nth-child(2n){
+	background:#f3f3f3;	
 }

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_22_123253) do
+ActiveRecord::Schema.define(version: 2021_09_02_183719) do
+
+  create_table "hypotheses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "sub_issue_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sub_issue_id"], name: "index_hypotheses_on_sub_issue_id"
+  end
 
   create_table "main_issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
@@ -22,22 +30,10 @@ ActiveRecord::Schema.define(version: 2021_08_22_123253) do
 
   create_table "sub_issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
-    t.text "hypothesis"
-    t.text "new_hypothesis"
-    t.text "sub_conclusion"
     t.bigint "main_issue_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["main_issue_id"], name: "index_sub_issues_on_main_issue_id"
-  end
-
-  create_table "user_main_issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "main_issue_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["main_issue_id"], name: "index_user_main_issues_on_main_issue_id"
-    t.index ["user_id"], name: "index_user_main_issues_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,8 +49,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_123253) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "hypotheses", "sub_issues"
   add_foreign_key "main_issues", "users"
   add_foreign_key "sub_issues", "main_issues"
-  add_foreign_key "user_main_issues", "main_issues"
-  add_foreign_key "user_main_issues", "users"
 end
