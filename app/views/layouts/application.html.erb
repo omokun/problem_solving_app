@@ -4,6 +4,7 @@
     <title>ProblemSolvingApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%# リセットCSS %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <script
       type="text/javascript"
@@ -16,12 +17,37 @@
         border: 1px solid lightgray;
       }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alyssaxuu/flowy/flowy.min.css"> 
+    <script src="https://cdn.jsdelivr.net/gh/alyssaxuu/flowy/flowy.min.js"></script>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
   </head>
 
   <body>
+    <header class="header">
+        <div class="nav">
+          <div class="nav__left">
+            <%= link_to 'ＴＯＰ', main_issues_path, class: "nav__btn" %>
+          </div>
+          <% if user_signed_in? %>
+            <div class="nav__right">
+              <%= link_to "#{current_user.nickname}さん", "#", class: :nav__logout %>
+              <%= link_to 'ログアウト',  destroy_user_session_path, method: :delete, class: :nav__btn2 %>
+            </div>
+          <% else %>
+            <div class="nav__right">
+              <%= link_to 'ログイン', new_user_session_path, class: :nav__btn2 %>
+              <%= link_to '新規登録', new_user_registration_path, class: :nav__btn2 %>
+            </div>
+          <% end %>
+        </div>
+    </header>
+
     <%= yield %>
+    
+    <footer id="footer">
+      <small>&copy; copyright.</small>  
+    </footer>
   </body>
 </html>

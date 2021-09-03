@@ -1,3 +1,20 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.actions {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.2em;
+  color: #FF0000;
+  text-decoration: none;
+  user-select: none;
+  border: 2px #FF0000 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.actions:hover{
+  color: #fff;
+  background: #FF0000;
+}

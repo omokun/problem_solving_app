@@ -1,3 +1,222 @@
+.main{
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.side-bar {
+  background-color: #303030;
+  width: 300px;
+  height: 10wh;
+}
+
+#sub-area {
+  width: 70%;
+  padding: 50px;
+  margin: 0 auto;
+      /*stickyで固定*/
+      position: -webkit-sticky;/*Safari*/
+      position: sticky;
+        /*固定したい位置*/
+      top: 120px;
+        /*ナビゲーションの形状*/
+      background:#303030;
+      border: 1px solid #eee;
+      box-shadow:10px #ddd;
+      padding: 20px;
+}
+
+.step {
+  padding: 10px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.step:hover {
+text-decoration: none;
+color: #fff;
+opacity: 0.7;
+}
+
+.step2 {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+.step2::before,
+.step2::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color: #ed4545;
+  transition: .3s;
+}
+.step2::before {
+  top: 0;
+  left: 0;
+}
+.step2::after {
+  bottom: 0;
+  right: 0;
+}
+.step2:hover::before,
+.step2:hover::after {
+  width: 100%;
+}
+
+.issue-tree {
+  width: calc(100% - 300px);
+  margin: auto;
+}
+
+.issue-title {
+	position: relative;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	font-size: 50px;
+  font-weight : bold;
+	text-align: center;
+}
+
+.issue-title span {
+	position: relative;
+	z-index: 2;
+}
+
+.issue-title::before {
+	content: attr(data-en);
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgba(224,66,114,0.2);
+	font-size: 100px;
+	font-style: italic;
+}
+
+.issue-title::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%) rotate(30deg);
+	width: 1px;
+	height: 40px;
+	background-color: rgba(224,66,114,1);
+}
+
+/* 光るボタンのCSS　*/
+.shiny-btn2 {
+  display: block;
+  position: relative;
+  width: 40%;/*ボタンの幅*/
+  padding: 10px 0;
+  margin: 20px auto;
+  background-color: #ed4545;/*ボタンの色*/
+  box-shadow: 0 3px 0 0 rgba(198, 39, 39, 1);/*影の色(rgbaの値を変更)*/
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.shiny-btn2:hover {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.7;
+  box-shadow: none;
+  -webkit-transform: translateY(3px);
+}
+.shiny-btn2::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn4 3s ease-in-out infinite;
+}
+
+h3 {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 2rem 1rem 130px;
+  border-top: 3px solid #000;
+  font-size: 25px;
+}
+
+h3:before {
+  position: absolute;
+  top: -150%;
+  left: -100px;
+  width: 200px;
+  height: 300%;
+  content: '';
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  background: #000;
+}
+
+h3 span {
+  font-size: 30px;
+  font-size: 3rem;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: block;
+  padding-top: 3px;
+  padding-left: 16px;
+  color: #fff;
+}
+
+.form-subissue-tree {
+  width: 100%;
+  height: 200px;
+  padding: 0 auto;
+  margin: 30px 0 0 0 ;
+}
+
+.contents {
+  display: table;
+  table-layout: fixed;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  display: table-cell;
+  vertical-align: middle;
+  word-wrap: break-word;
+  height: 100%;
+  padding: 100px 10px;
+  background-color: #303030;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: 10px solid #FFFFFF;
+}
+
+.content2 {
+  width: 700px;
+  padding: 100px 0;
+  background-color: #303030;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
 .card-form{
   width: 500px;
 }
@@ -19,20 +238,9 @@
   display: flex;
 }
 
-
-.button{
-  height: 50px;
-  width: 100px;
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  font-weight: bold;
-  color: #6091d3;/*文字色*/
-  background: #FFF;
-  border: solid 3px #6091d3;/*線*/
-  border-radius: 10px;/*角の丸み*/
-}
-
 .footer{
+  background-color: #221f1f;
   position: relative;
   z-index: 2;
 }
+

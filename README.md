@@ -9,21 +9,7 @@
 |encrypted_password |string    |null: false               |
 
 ### Association
-- has_many :user_main_issues
-- has_many :main_issues, through: :user_main_issues
-
-
-## user_main_issues テーブル
-
-|Column             |Type      |Options                   |
-|-------------------|----------|--------------------------|
-|user_id            |string    |null: false               |
-|main_issue_id      |string    |null: false, unique: true |
-
-### Association
-- belongs_to :user
-- belongs_to :main_issue
-
+- has_many :main_issues
 
 ## main_issues テーブル
 
@@ -33,44 +19,73 @@
 |user              |references |null: false, foreign_key: true       |
 
 ### Association
-- has_many :user_main_issues
-- has_many :main_issues, through: :user_main_issues
+- belongs_to :user
 - has_many :sub_issues
-- has_one :conclusions
+- has_one :conclusion
 
+## conclusions テーブル
+
+|Column            |Type       |Options                              |
+|------------------|-----------|-------------------------------------|
+|content           |text       |null: false                          |
+|main_issue        |references |null: false, foreign_key: true       |
+
+### Association
+- belongs_to :main_issue
 
 ## sub_issues テーブル
 
 |Column         |Type          |Options                              |
 |---------------|--------------|-------------------------------------|
 |title          |text          |null: false                          |
-|hypothesis     |text          |                                     |
-|new_hypothesis |text          |                                     |
-|sub_conclusion |text          |                                     |
 |main_issue     |references    |null: false, foreign_key: true       |
 
 ### Association
 - belongs_to :main_issue
+- has_one :sub_conclusion
+- has_one :hypothesis
+
+## sub_conclusions テーブル
+
+|Column         |Type          |Options                              |
+|---------------|--------------|-------------------------------------|
+|content        |text          |null: false                          |
+|sub_issue      |references    |null: false, foreign_key: true       |
+
+### Association
+- belongs_to :sub_issue
+
+## hypotheses テーブル
+
+|Column         |Type          |Options                              |
+|---------------|--------------|-------------------------------------|
+|content        |text          |null: false                          |
+|sub_issue      |references    |null: false, foreign_key: true       |
+
+### Association
+- belongs_to :sub_issue
+- has_one :new_hypothesis
 - has_many :informations
 
+## new_hypotheses テーブル
+
+|Column         |Type          |Options                              |
+|---------------|--------------|-------------------------------------|
+|content        |text          |null: false                          |
+|hypothesis     |references    |null: false, foreign_key: true       |
+
+### Association
+- belongs_to :hypothesis
 
 ## informations テーブル
 
 |Column           |Type         |Options                              |
 |-----------------|-------------|-------------------------------------|
 |content          |text         |null: false                          |
-|sub_issue        |references   |null: false, foreign_key: true       |
+|hypothesis       |references   |null: false, foreign_key: true       |
 
 ### Association
-belongs_to :sub_issue
+belongs_to :hypothesis
 
-
-## conclusions テーブル
-
-|Column            |Type       |Options                              |
-|------------------|-----------|-------------------------------------|
-|title             |text       |null: false                          |
-|main_issue        |references |null: false, foreign_key: true       |
-
-### Association
-- belongs_to :main_issue
+### 要件定義
+https://docs.google.com/spreadsheets/d/1S6Mc1NxH2WVdVjcs0riN7LocRKtGfZoRkyGMXqWwoLY/edit#gid=0

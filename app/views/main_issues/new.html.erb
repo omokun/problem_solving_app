@@ -1,7 +1,7 @@
 <div class="bg-image">
   <div class="text">
     <div class='main-issue-form'>
-      <%=form_with model: @main_issue, local: true do |f|%>
+      <%= form_with model: @main_issue, local: true do |f|%>
         <%= f.label :イシューを特定する, class: 'main-issue-form__label'%>
         <div class='main-issue-form__field--right'>
           <%= f.text_area :title, class: 'main-issue_name main-issue-form__input', placeholder: 'イシューを入力して下さい'%>
