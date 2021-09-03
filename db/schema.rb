@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_02_183719) do
+ActiveRecord::Schema.define(version: 2021_09_03_085720) do
+
+  create_table "conclusions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "main_issue_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["main_issue_id"], name: "index_conclusions_on_main_issue_id"
+  end
 
   create_table "hypotheses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
@@ -20,12 +28,36 @@ ActiveRecord::Schema.define(version: 2021_09_02_183719) do
     t.index ["sub_issue_id"], name: "index_hypotheses_on_sub_issue_id"
   end
 
+  create_table "information", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "hypothesis_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hypothesis_id"], name: "index_information_on_hypothesis_id"
+  end
+
   create_table "main_issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_main_issues_on_user_id"
+  end
+
+  create_table "new_hypotheses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "hypothesis_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hypothesis_id"], name: "index_new_hypotheses_on_hypothesis_id"
+  end
+
+  create_table "sub_conclusions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "sub_issue_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sub_issue_id"], name: "index_sub_conclusions_on_sub_issue_id"
   end
 
   create_table "sub_issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,7 +81,11 @@ ActiveRecord::Schema.define(version: 2021_09_02_183719) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "conclusions", "main_issues"
   add_foreign_key "hypotheses", "sub_issues"
+  add_foreign_key "information", "hypotheses"
   add_foreign_key "main_issues", "users"
+  add_foreign_key "new_hypotheses", "hypotheses"
+  add_foreign_key "sub_conclusions", "sub_issues"
   add_foreign_key "sub_issues", "main_issues"
 end
