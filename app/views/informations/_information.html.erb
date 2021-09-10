@@ -1,0 +1,19 @@
+_informationです
+<%
+=begin
+%>
+
+<%= form_with model: [@main_issue, sub_issue, @information], url: main_issue_sub_issue_informations_path(@sub_issue), class: 'form', local: true do |f| %>
+<div class="form-input">
+  <%= f.text_area :content, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+</div>
+<%= f.submit '登録する', class: 'shiny-btn2' %>
+<% end %>
+
+<div class="content3">
+  <%= @information.content %>
+</div>
+
+<%
+=end
+%>

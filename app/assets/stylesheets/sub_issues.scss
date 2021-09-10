@@ -184,7 +184,7 @@ h3 span {
 
 .form-subissue-tree {
   width: 100%;
-  height: 200px;
+  height: 100px;
   padding: 0 auto;
   margin: 30px 0 0 0 ;
 }
@@ -192,6 +192,7 @@ h3 span {
 .contents {
   display: table;
   table-layout: fixed;
+  margin: 0 auto;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -199,14 +200,22 @@ h3 span {
 
 .content {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: top;
   word-wrap: break-word;
   height: 100%;
-  padding: 100px 10px;
-  background-color: #303030;
+  // padding: 100px 0;
+  // background-color: #303030;
   font-size: 20px;
-  color: #FFFFFF;
+  // color: #FFFFFF;
   border: 10px solid #FFFFFF;
+}
+
+.content3{
+  background-color: #303030;
+  height: 200px;
+  padding: 30px 20px;
+  color: #FFFFFF;
+  overflow: scroll;
 }
 
 .content2 {

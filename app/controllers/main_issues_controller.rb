@@ -17,9 +17,15 @@ class MainIssuesController < ApplicationController
     @main_issue = MainIssue.all
   end
 
+  def update
+    @main_issue = MainIssue.find(params[:id])
+    @main_issue.update(main_issue_params)
+    redirect_to action: :index
+  end
+
   private
 
   def main_issue_params
-    params.require(:main_issue).permit(:title).merge(user_id: current_user.id)
+    params.require(:main_issue).permit(:title, :conclusion).merge(user_id: current_user.id)
   end
 end
