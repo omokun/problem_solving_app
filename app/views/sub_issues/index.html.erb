@@ -21,25 +21,25 @@
 
     <section class="scroll-point" id="area-1">
       <h3><span>01</span>枠組みを考える（サブイシュー）</h3>
-      <%= form_with model: [@main_issue, @sub_issue], class: 'form', local: true do |f| %>
+      <%= form_with model: [@main_issue, @sub_issue],id: "form", class: 'form' do |f| %>
         <div class="form-input">
           <%= f.text_area :title, class: 'form-subissue-tree', placeholder: 'イシューに答えるために必要な論点のセット（枠組み）　『・・・か？』（具体的に問いの形にする）' %>
         </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
+        <%= f.submit '登録する', id: "submit", class: 'shiny-btn2' %>
       <% end %>
+      
       <div class="contents">
         <%= render partial: 'sub_issue', collection: @sub_issues %>
-
       </div>
     </section>
 
     <section class="scroll-point" id="area-6">
       <h3><span>06</span>イシューに対する主張・結論</h3>
-      <%= form_with model: @main_issue, class: 'form', local: true do |f| %>
+      <%= form_with model: @main_issue, id: "form", class: 'form' do |f| %>
         <div class="form-input">
           <%= f.text_area :conclusion, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
         </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
+        <%= f.submit '登録する', id: "submit", class: 'shiny-btn2' %>
       <% end %>
       <div class="contents">
         <div class="content">

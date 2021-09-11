@@ -5,14 +5,13 @@ class InformationsController < ApplicationController
   end
 
   def create
-    @information = @sub_issue.informations.new(information_params)
-    @information.save
+    @information = SubIssue.find(params[:sub_issue_id]).informations.create(information_params)
   end
 
   private
 
   def information_params
-    params.require(:information).permit(:content).merge(sub_issue_id: params[:id])
+    params.require(:information).permit(:content)
   end
 end
 

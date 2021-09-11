@@ -1,0 +1,13 @@
+<%
+=begin
+%>
+
+var content = document.getElementById('informations-<%= @information.sub_issue_id %>');
+var newElement = document.createElement('div');
+newElement.textContent = '<%= @information.content %>';
+newElement.className = 'content3';
+content.appendChild(newElement);
+
+<%
+=end
+%>

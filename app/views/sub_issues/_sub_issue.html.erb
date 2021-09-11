@@ -1,70 +1,51 @@
-
 <div class="content">
-  <div class="content3">
-  <%= sub_issue.title %>
-  </div>
+  <div id="sub_issues-<%= sub_issue.id %>">
+    <div class="content3">
+    <%= sub_issue.title %>
+    </div>
 
-  <section class="scroll-point" id="area-2">
-    <h3><span>02</span>初期仮説を立てる</h3>
-    <%= form_with model: sub_issue, url: main_issue_sub_issue_path(id: sub_issue.id), class: 'form', local: true do |f| %>
+    <section class="scroll-point" id="area-2">
+      <h3><span>02</span>初期仮説を立てる</h3>
+      <%= form_with model: sub_issue, url: main_issue_sub_issue_path(id: sub_issue.id), class: 'form' do |f| %>
+        <div class="form-input">
+          <%= f.text_area :hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+        </div>
+        <%= f.submit '登録する',  class: 'shiny-btn2' %>
+      <% end %>
+      <div class="content3">
+      <%= sub_issue.hypothesis %>
+      </div>
+    </section>
+
+    <section class="scroll-point" id="area-3">
+      <h3><span>03</span>検証情報を集める</h3>
+      <%= render partial: 'informations/information' ,locals: { sub_issue: sub_issue} %>
+    </section>
+
+    <section class="scroll-point" id="area-4">
+      <h3><span>04</span>仮説を進化させる</h3>
+      <%= form_with model: sub_issue, url: main_issue_sub_issues_path(id: sub_issue.id), class: 'form' do |f| %>
+        <div class="form-input">
+          <%= f.text_area :new_hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+        </div>
+        <%= f.submit '登録する', class: 'shiny-btn2' %>
+      <% end %>
+    <div class="content3">
+    <%= sub_issue.new_hypothesis %>
+    </div>
+    </section>
+
+      <section class="scroll-point" id="area-5">
+        <h3><span>05</span>サブイシューに対する主張・結論</h3> 
+        <%= form_with model: sub_issue, url: main_issue_sub_issues_path(id: sub_issue.id), class: 'form' do |f| %>
       <div class="form-input">
-        <%= f.text_area :hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+        <%= f.text_area :sub_conclusion, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
       </div>
       <%= f.submit '登録する', class: 'shiny-btn2' %>
     <% end %>
     <div class="content3">
-    <%= sub_issue.hypothesis %>
+    <%= sub_issue.sub_conclusion %>
     </div>
-  </section>
-
-  <section class="scroll-point" id="area-3">
-  <h3><span>03</span>検証情報を集める</h3>
-
-  <%= render partial: 'informations/information' %>
-
-<%
-=begin
-%>
-    <%= form_with model: @information, url: main_issue_sub_issue_informations_path(id: sub_issue.id), class: 'form', local: true do |f| %>
-    <div class="form-input">
-      <%= f.text_area :content, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
-    </div>
-    <%= f.submit '登録する', class: 'shiny-btn2' %>
-  <% end %>
-
-    <div class="content3">
-      <%# <%= @informations.content %> %>
-    </div>
-
-<%
-=end
-%>
-
-  </section>
-
-  <section class="scroll-point" id="area-4">
-    <h3><span>04</span>仮説を進化させる</h3>
-    <%= form_with model: sub_issue, url: main_issue_sub_issues_path(id: sub_issue.id), class: 'form', local: true do |f| %>
-      <div class="form-input">
-        <%= f.text_area :new_hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
-      </div>
-      <%= f.submit '登録する', class: 'shiny-btn2' %>
-    <% end %>
-  <div class="content3">
-  <%= sub_issue.new_hypothesis %>
+    </section>
   </div>
-  </section>
-
-    <section class="scroll-point" id="area-5">
-      <h3><span>05</span>サブイシューに対する主張・結論</h3> 
-      <%= form_with model: sub_issue, url: main_issue_sub_issues_path(id: sub_issue.id), class: 'form', local: true do |f| %>
-    <div class="form-input">
-      <%= f.text_area :sub_conclusion, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
-    </div>
-    <%= f.submit '登録する', class: 'shiny-btn2' %>
-  <% end %>
-  <div class="content3">
-  <%= sub_issue.sub_conclusion %>
-  </div>
-  </section>
 </div>
