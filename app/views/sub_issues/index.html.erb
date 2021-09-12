@@ -21,85 +21,38 @@
 
     <section class="scroll-point" id="area-1">
       <h3><span>01</span>枠組みを考える（サブイシュー）</h3>
-      <%= form_with model: [@main_issue, @sub_issue], class: 'form', local: true do |f| %>
+      <%= form_with model: [@main_issue, @sub_issue],id: "form", class: 'form' do |f| %>
         <div class="form-input">
-          <%= f.text_area :title, class: 'form-subissue-tree', placeholder: 'イシューに答えるために必要な論点のセット（枠組み）　『・・・か？』' %>
+          <%= f.text_area :title, class: 'form-subissue-tree', placeholder: 'イシューに答えるために必要な論点のセット（枠組み）　『・・・か？』（具体的に問いの形にする）' %>
         </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
+        <%= f.submit '登録する', id: "submit", class: 'shiny-btn2' %>
       <% end %>
+      
       <div class="contents">
         <%= render partial: 'sub_issue', collection: @sub_issues %>
       </div>
     </section>
 
-    <section class="scroll-point" id="area-2">
-      <h3><span>02</span>初期仮説を立てる</h3>
-      <%= form_with model: [@main_issue, @sub_issue], class: 'form', local: true do |f| %>
-        <div class="form-input">
-          <%= f.text_area :hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
-        </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
-      <% end %>
-      <div class="contents">
-        <%= render partial: 'hypothesis', collection: @sub_issues %>
-      </div>
-    </section>
-
-    <section class="scroll-point" id="area-3">
-      <h3><span>03</span>検証情報を集める</h3>
-      <%= form_with model: [@main_issue, @sub_issue], class: 'form', local: true do |f| %>
-        <div class="form-input">
-          <%= f.text_area :hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
-        </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
-      <% end %>
-      <div class="contents">
-        <%= render partial: 'hypothesis', collection: @sub_issues %>
-      </div>
-    </section>
-
-    <section class="scroll-point" id="area-4">
-      <h3><span>04</span>仮説を進化させる</h3>
-      <%= form_with model: [@main_issue, @sub_issue], class: 'form', local: true do |f| %>
-        <div class="form-input">
-          <%= f.text_area :new_hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
-        </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
-      <% end %>
-      <div class="contents">
-        <%= render partial: 'new_hypothesis', collection: @sub_issues %>
-      </div>
-    </section>
-
-    <section class="scroll-point" id="area-5">
-      <h3><span>05</span>サブイシューに対する主張・結論</h3> 
-      <%= form_with model: [@main_issue, @sub_issue], class: 'form', local: true do |f| %>
-        <div class="form-input">
-          <%= f.text_area :sub_conclusion, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
-        </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
-      <% end %>
-      <div class="contents">
-        <%= render partial: 'sub_conclusion', collection: @sub_issues %>
-      </div>
-    </section>
-
     <section class="scroll-point" id="area-6">
       <h3><span>06</span>イシューに対する主張・結論</h3>
-      <%= form_with model: [@main_issue, @sub_issue], class: 'form', local: true do |f| %>
+      <%= form_with model: @main_issue, id: "form", class: 'form' do |f| %>
         <div class="form-input">
-          <%= f.text_area :sub_conclusion, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+          <%= f.text_area :conclusion, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
         </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
+        <%= f.submit '登録する', id: "submit", class: 'shiny-btn2' %>
       <% end %>
       <div class="contents">
-        <%= render partial: 'sub_conclusion', collection: @sub_issues %>
+        <div class="content">
+          <div class="content3">
+          <%= @main_issue.conclusion %>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="scroll-point" id="area-7">
       <div class="contents">
-        <%= link_to 'メインメッセージへ', new_user_session_path, class: :nav__btn2 %>
+        <%= link_to 'メインメッセージへ', main_messages_path, class: 'shiny-btn2' %>
       </div>
     </section>
   </div>
