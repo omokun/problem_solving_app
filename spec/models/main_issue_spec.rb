@@ -16,11 +16,11 @@ RSpec.describe MainIssue, type: :model do
         @main_issue.title = ''
         @main_issue.valid?
         expect(@main_issue.errors.full_messages).to include "Title can't be blank"
-      end     
+      end
       it 'ユーザーが紐付いていなければ登録できない' do
         @main_issue.user = nil
         @main_issue.valid?
-        expect(@main_issue.errors.full_messages).to include "User must exist"
+        expect(@main_issue.errors.full_messages).to include 'User must exist'
       end
     end
   end

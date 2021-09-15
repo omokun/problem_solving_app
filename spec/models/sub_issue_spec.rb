@@ -16,11 +16,11 @@ RSpec.describe SubIssue, type: :model do
         @sub_issue.title = ''
         @sub_issue.valid?
         expect(@sub_issue.errors.full_messages).to include "Title can't be blank"
-      end     
+      end
       it 'メインイシューが紐付いていなければ登録できない' do
         @sub_issue.main_issue = nil
         @sub_issue.valid?
-        expect(@sub_issue.errors.full_messages).to include "Main issue must exist"
+        expect(@sub_issue.errors.full_messages).to include 'Main issue must exist'
       end
     end
   end

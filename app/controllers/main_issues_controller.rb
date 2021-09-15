@@ -1,5 +1,4 @@
 class MainIssuesController < ApplicationController
-
   def new
     @main_issue = MainIssue.new
   end

@@ -16,11 +16,11 @@ RSpec.describe Information, type: :model do
         @information.content = ''
         @information.valid?
         expect(@information.errors.full_messages).to include "Content can't be blank"
-      end     
+      end
       it 'サブイシューが紐付いていなければ登録できない' do
         @information.sub_issue = nil
         @information.valid?
-        expect(@information.errors.full_messages).to include "Sub issue must exist"
+        expect(@information.errors.full_messages).to include 'Sub issue must exist'
       end
     end
   end

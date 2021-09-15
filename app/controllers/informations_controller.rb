@@ -1,5 +1,4 @@
 class InformationsController < ApplicationController
-
   def index
     @information = Information.new
   end
@@ -15,5 +14,3 @@ class InformationsController < ApplicationController
     params.require(:information).permit(:content)
   end
 end
-
-
