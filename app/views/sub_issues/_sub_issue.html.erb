@@ -10,7 +10,7 @@
         <div class="form-input">
           <%= f.text_area :hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
         </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
+        <%= f.submit '登録する', id: "submit2", class: 'shiny-btn2' %>
       <% end %>
       <div class="content3">
       <%= sub_issue.hypothesis %>
@@ -28,7 +28,7 @@
         <div class="form-input">
           <%= f.text_area :new_hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
         </div>
-        <%= f.submit '登録する', class: 'shiny-btn2' %>
+        <%= f.submit '登録する', id: "submit4", class: 'shiny-btn2' %>
       <% end %>
     <div class="content3">
     <%= sub_issue.new_hypothesis %>
@@ -41,7 +41,7 @@
       <div class="form-input">
         <%= f.text_area :sub_conclusion, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
       </div>
-      <%= f.submit '登録する', class: 'shiny-btn2' %>
+      <%= f.submit '登録する', id: "submit5", class: 'shiny-btn2' %>
     <% end %>
     <div class="content3">
     <%= sub_issue.sub_conclusion %>
