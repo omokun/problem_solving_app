@@ -1,6 +1,10 @@
 <%= form_with model: Information.new, url: main_issue_sub_issue_informations_path(main_issue_id: sub_issue.main_issue_id, sub_issue_id: sub_issue.id), class: 'form' do |f| %>
   <div class="form-input">
-    <%= f.text_area :content, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+    <%= f.text_area :content, class: 'form-subissue-tree', placeholder: 'いきなり詳細な情報を探していないか？（仮説検証の為の情報を集める）
+    仮説に対して十分な根拠が揃っているか？
+    「隠れた前提」を抑えた上で、「その前提は本当に成立するか？」をチェックする。
+    前提を支える情報を集めることで論理を強化できる。
+    必要な情報が足りない場合は、新たに追加で情報収集する姿勢を持つ。' %>
   </div>
   <%= f.submit '登録する', id: "submit3", class: 'shiny-btn2' %>
 <% end %>

@@ -8,7 +8,14 @@
       <h3><span>02</span>初期仮説を立てる</h3>
       <%= form_with model: sub_issue, url: main_issue_sub_issue_path(id: sub_issue.id), class: 'form' do |f| %>
         <div class="form-input">
-          <%= f.text_area :hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+          <%= f.text_area :hypothesis, class: 'form-subissue-tree', 
+          placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』の形にする
+          ※ひとつの仮説だけで思考を進めると、直感や思いつきの仮説を無理やり結論付けてしまう
+          ※直感や思いつきで思考をすすめることを避ける為、特に「広げる」「深める」を意識する
+          point1.目的を押さえる（今ここで、答えるべき問いはなにか？）
+          point2.言葉にする（例えば、どんなことが言えそうか？）
+          point3.広げる（他にはないか？）
+          point4.深める（なぜそう思う？具体的には？）' %>
         </div>
         <%= f.submit '登録する', id: "submit2", class: 'shiny-btn2' %>
       <% end %>
@@ -26,7 +33,12 @@
       <h3><span>04</span>仮説を進化させる</h3>
       <%= form_with model: sub_issue, url: main_issue_sub_issue_path(id: sub_issue.id), class: 'form' do |f| %>
         <div class="form-input">
-          <%= f.text_area :new_hypothesis, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+          <%= f.text_area :new_hypothesis, class: 'form-subissue-tree', placeholder: '以下を判断軸として検証する優先順位をつける
+        ・確からしさ
+        ・検証難易度
+        ・効果、インパクト
+        ・アクションへのつながり
+        ・新規性、独自性' %>
         </div>
         <%= f.submit '登録する', id: "submit4", class: 'shiny-btn2' %>
       <% end %>
@@ -39,7 +51,18 @@
         <h3><span>05</span>サブイシューに対する主張・結論</h3> 
         <%= form_with model: sub_issue, url: main_issue_sub_issue_path(id: sub_issue.id), class: 'form' do |f| %>
       <div class="form-input">
-        <%= f.text_area :sub_conclusion, class: 'form-subissue-tree', placeholder: 'イシューや枠組みの問いを意識して仮説を考える　『・・・だろう』' %>
+        <%= f.text_area :sub_conclusion, class: 'form-subissue-tree', placeholder: '論理が成立しているか？
+          →仮説が根拠によって支えられているか？
+          →隠れた前提を意識しているか？（反対の立場で考えてみる、前向きに疑う姿勢を持つことが重要）
+          ※なぜそういえるか？本当か？（Why？True？の視点を持つ）
+
+          意思決定につながる仮説になっているか？
+          →抽象的な言葉（Big Word）でまとめていないか？
+          →事実を述べるだけでなく、問いに答えているか？
+
+          イシューに対して意味のある仮説になっているか？
+          「なぜそう言えるか？」「本当か？」を5回問いかける
+        ' %>
       </div>
       <%= f.submit '登録する', id: "submit5", class: 'shiny-btn2' %>
     <% end %>

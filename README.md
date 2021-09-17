@@ -8,7 +8,13 @@
 http://35.75.195.24/
 
 # :smile: テスト用アカウント
-ログイン機能等を実装した場合は、ログインに必要な情報を記述。またBasic認証等を設けている場合は、そのID/Passも記述すること。
+* Basic認証 ID/PASS
+  * ID：admin
+  * PASS：2222
+
+* テスト用アカウント
+  * メールアドレス: admin@admin
+  * パスワード: xyz321
 
 # :smile: 利用方法
 1.新規登録する or ログインする<br>
@@ -41,11 +47,12 @@ http://35.75.195.24/
 [URL](https://docs.google.com/spreadsheets/d/1S6Mc1NxH2WVdVjcs0riN7LocRKtGfZoRkyGMXqWwoLY/edit#gid=0)
 # :smile: 実装した機能についての画像やGIFおよびその説明
 [ログイン機能](https://gyazo.com/bf32cbf8ae4f0b8fa2971b3063227760)
-
-実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。
+[課題登録機能](https://gyazo.com/44a5c74cd4b02fb5d3d7c304511a169f)
+[イシューツリー作成機能]()
 # :smile: 実装予定の機能
 - ピラミッドストラクチャー作成機能
-
+- タスク管理機能
+- 議事録管理機能
 # :smile: データベース設計
 ## ER図
 ![ER](https://user-images.githubusercontent.com/87056875/132993890-2f4d34e8-caf1-4c07-8293-9b4f2edc7528.png)
