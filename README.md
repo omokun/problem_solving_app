@@ -1,13 +1,14 @@
-# :smile: アプリ名
-課題解決アプリ 
-# :smile:アプリケーション概要
+# :cherries: アプリ名
+課題解決アプリ
+[![Image from Gyazo](https://i.gyazo.com/3f1e8c1046a96aff5345d6056f544732.png)](https://gyazo.com/3f1e8c1046a96aff5345d6056f544732) 
+# :cherries:アプリケーション概要
 クリティカルシンキングという論理的思考法に基づき、<br>
 課題解決に向けた適切なステップ踏み結論を導き出すことができる。
 
-# :smile:URL
+# :cherries:URL
 http://35.75.195.24/
 
-# :smile: テスト用アカウント
+# :cherries: テスト用アカウント
 * Basic認証 ID/PASS
   * ID：admin
   * PASS：2222
@@ -16,7 +17,7 @@ http://35.75.195.24/
   * メールアドレス: admin@admin
   * パスワード: xyz321
 
-# :smile: 利用方法
+# :cherries: 利用方法
 1.新規登録する or ログインする<br>
 2.課題（イシュー）を設定する<br>
 3.枠組みを考える<br>
@@ -26,7 +27,7 @@ http://35.75.195.24/
 7.サブイシューに対する主張・結論<br>
 8.イシューに対する主張・結論<br>
 
-# :smile: 制作背景(意図)
+# :cherries: 制作背景(意図)
 ## 背景
 私が過去にグロービス経営大学院へ通っており<br>
 そこで課題解決に使う「クリティカルシンキング」という論理的思考法を勉強しておりました。<br>
@@ -43,17 +44,21 @@ http://35.75.195.24/
 - 課題に対してうまく結論がまとまらない
 - 論点から脱線した結論を出してしまう
 
-# :smile: 要件定義
+# :cherries: 要件定義
 [URL](https://docs.google.com/spreadsheets/d/1S6Mc1NxH2WVdVjcs0riN7LocRKtGfZoRkyGMXqWwoLY/edit#gid=0)
-# :smile: 実装した機能についての画像やGIFおよびその説明
-[ログイン機能](https://gyazo.com/bf32cbf8ae4f0b8fa2971b3063227760)
-[課題登録機能](https://gyazo.com/44a5c74cd4b02fb5d3d7c304511a169f)
-[イシューツリー作成機能](https://gyazo.com/8d2d0ab5b3d951b2f9077e9546d055b7)
-# :smile: 実装予定の機能
+# :cherries: 実装した機能についての画像やGIFおよびその説明
+## ログイン機能
+[![Image from Gyazo](https://i.gyazo.com/bf32cbf8ae4f0b8fa2971b3063227760.gif)](https://gyazo.com/bf32cbf8ae4f0b8fa2971b3063227760)
+## 課題登録機能
+[![Image from Gyazo](https://i.gyazo.com/44a5c74cd4b02fb5d3d7c304511a169f.gif)](https://gyazo.com/44a5c74cd4b02fb5d3d7c304511a169f)
+## イシューツリー作成機能
+[![Image from Gyazo](https://i.gyazo.com/8d2d0ab5b3d951b2f9077e9546d055b7.gif)](https://gyazo.com/8d2d0ab5b3d951b2f9077e9546d055b7)
+
+# :cherries: 実装予定の機能
 - ピラミッドストラクチャー作成機能
 - タスク管理機能
 - 議事録管理機能
-# :smile: データベース設計
+# :cherries: データベース設計
 ## ER図
 ![ER](https://user-images.githubusercontent.com/87056875/132993890-2f4d34e8-caf1-4c07-8293-9b4f2edc7528.png)
 ## users テーブル
